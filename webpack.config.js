@@ -11,10 +11,10 @@ module.exports = {
   },
   context: src,
   entry: {
-    main: './NormalizePath.js',
+    main: './PathUtil.js',
   },
   output: {
-    filename: 'NormalizePath.bundle.js',
+    filename: 'PathUtil.bundle.js',
     sourceMapFilename: '[name].map',
     path: dist,
     publicPath:"",

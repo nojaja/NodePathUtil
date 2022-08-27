@@ -1,22 +1,22 @@
 {
-  "name": "NodeNormalizePath",
+  "name": "@nojaja/pathutil",
   "version": "1.0.0",
-  "description": "",
-  "main": "./dist/NormalizePath.bundle.js",
+  "description": "Provides a simple library for handling file paths.",
+  "main": "./dist/PathUtil.bundle.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test webpack && jest",
     "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nojaja/NodeNormalizePath.git"
+    "url": "git+https://github.com/nojaja/NodePathUtil.git"
   },
   "author": "nojaja <free.riccia@gmail.com> (https://github.com/nojaja)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nojaja/NodeNormalizePath/issues"
+    "url": "https://github.com/nojaja/NodePathUtil/issues"
   },
-  "homepage": "https://github.com/nojaja/NodeNormalizePath#readme",
+  "homepage": "https://github.com/nojaja/NodePathUtil#readme",
   "devDependencies": {
     "babel-jest": "^29.0.0",
     "cross-env": "^7.0.3",

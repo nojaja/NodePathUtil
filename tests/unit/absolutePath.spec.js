@@ -1,10 +1,13 @@
-const NormalizePath = require('../../dist/NormalizePath.bundle.js')
+const PathUtil = require('../../dist/PathUtil.bundle.js')
 
 test('1', () => {
-  expect(NormalizePath.absolutePath('./hoge/fuga','/root')).toBe('/root/hoge/fuga')
+  expect(PathUtil.absolutePath('./hoge/fuga', '/root')).toBe('/root/hoge/fuga')
 });
 
 test('2', () => {
-  expect(NormalizePath.absolutePath('../fuga','/root/hoge')).toBe('/root/fuga')
-  });
-  
+  expect(PathUtil.absolutePath('../fuga', '/root/hoge')).toBe('/root/fuga')
+});
+test('3', () => {
+  expect(PathUtil.absolutePath('c:/windows/../nodejs/path', '')).toBe('c:/nodejs/path')
+  expect(PathUtil.absolutePath('c:\\windows\\..\\nodejs\\path')).toBe('c:/nodejs/path')
+});
