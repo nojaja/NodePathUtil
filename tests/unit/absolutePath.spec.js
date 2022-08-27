@@ -8,6 +8,6 @@ test('2', () => {
   expect(PathUtil.absolutePath('../fuga', '/root/hoge')).toBe('/root/fuga')
 });
 test('3', () => {
-  expect(PathUtil.absolutePath('c:/windows/../nodejs/path', '')).toBe('c:/nodejs/path')
-  expect(PathUtil.absolutePath('c:\\windows\\..\\nodejs\\path')).toBe('c:/nodejs/path')
+  expect(PathUtil.absolutePath('c:/windows/../nodejs/path', 'c:/')).toBe('c:/nodejs/path')
+  expect(PathUtil.absolutePath('c:\\windows\\..\\nodejs\\path', 'c:/')).toBe('c:/nodejs/path')
 });
