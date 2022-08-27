@@ -32,7 +32,7 @@ export class PathUtil {
     
     static absolutePath(targetPath, currentDirectory) {
         const cwd = currentDirectory || process.cwd()
-        return PathUtil.normalizeSeparator(path.normalize((PathUtil.isAbsolute(targetPath)) ? targetPath : path.join(cwd, targetPath)))
+        return PathUtil.normalizeSeparator(path.win32.normalize((PathUtil.isAbsolute(targetPath)) ? targetPath : path.join(cwd, targetPath)))
     }
 }
 
