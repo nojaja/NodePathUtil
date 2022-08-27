@@ -14,9 +14,25 @@ export class PathUtil {
 
         return prefix + suffix
     }
+    
+    static isAbsolute(targetPath) {
+        const _targetPath = PathUtil.normalizeSeparator(targetPath)
+        if (/^[a-z]:\//i.test(_targetPath)) {
+            return true;
+        }
+        // Microsoft Azure absolute filepath
+        if (/^\/\//.test(_targetPath)) {
+            return true;
+        }
+        if (/^\//.test(_targetPath)) {
+            return true;
+        }
+        return false
+    }
+    
     static absolutePath(targetPath, currentDirectory) {
         const cwd = currentDirectory || process.cwd()
-        return PathUtil.normalizeSeparator(path.normalize((path.isAbsolute(targetPath)) ? targetPath : path.join(cwd, targetPath)))
+        return PathUtil.normalizeSeparator(path.normalize((PathUtil.isAbsolute(targetPath)) ? targetPath : path.join(cwd, targetPath)))
     }
 }
 
