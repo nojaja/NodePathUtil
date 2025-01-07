@@ -4,7 +4,13 @@ export class PathUtil {
     constructor() {
 
     }
+    /**
+     * Unify path OS differences by aligning them with Linux 
+     * @param {*} targetPath 
+     * @returns 
+     */
     static normalizeSeparator(targetPath) {
+        if(!targetPath) return null;
         const _targetPath = targetPath.replace(/(\\|\/)/g, "/") // a\b\c a/b/c -> a/b/c
         //win32 namespaces
         const win32NS = Array.from(_targetPath.matchAll(/^\/\/+([\?\.])\//g))
@@ -14,7 +20,11 @@ export class PathUtil {
 
         return prefix + suffix
     }
-    
+    /**
+     * 
+     * @param {*} targetPath 
+     * @returns 
+     */
     static isAbsolute(targetPath) {
         const _targetPath = PathUtil.normalizeSeparator(targetPath)
         if (/^[a-z]:\//i.test(_targetPath)) {
@@ -29,10 +39,27 @@ export class PathUtil {
         }
         return false
     }
-    
+    /**
+     * Convert path to absolute path
+     * @param {*} targetPath 
+     * @param {*} currentDirectory 
+     * @returns 
+     */
     static absolutePath(targetPath, currentDirectory) {
+        if(!targetPath) return null;
         const cwd = currentDirectory || process.cwd()
         return PathUtil.normalizeSeparator(path.win32.normalize((PathUtil.isAbsolute(targetPath)) ? targetPath : path.join(cwd, targetPath)))
+    }
+    /**
+     * Convert path to relative path
+     * @param {*} targetPath 
+     * @param {*} currentDirectory 
+     * @returns 
+     */
+    static relativePath(targetPath, currentDirectory) {
+        if(!targetPath) return null;
+        const cwd = PathUtil.normalizeSeparator(currentDirectory) || process.cwd();
+        return PathUtil.normalizeSeparator(path.posix.relative(cwd, targetPath));
     }
 }
 

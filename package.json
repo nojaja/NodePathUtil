@@ -1,7 +1,7 @@
 {
   "name": "@nojaja/pathutil",
-  "version": "1.0.0",
-  "description": "Provides a simple library for handling file paths.",
+  "version": "1.0.2",
+  "description": "Aims to standardize path representations across different operating systems, using Linux-style paths as the common format",
   "main": "./dist/PathUtil.bundle.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test webpack && jest",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nojaja/NodePathUtil.git"
+    "url": "git+https://github.com/nojaja/NodeNormalizePath.git"
   },
   "author": "nojaja <free.riccia@gmail.com> (https://github.com/nojaja)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nojaja/NodePathUtil/issues"
+    "url": "https://github.com/nojaja/NodeNormalizePath/issues"
   },
-  "homepage": "https://github.com/nojaja/NodePathUtil#readme",
+  "homepage": "https://github.com/nojaja/NodeNormalizePath#readme",
   "devDependencies": {
     "babel-jest": "^29.0.0",
     "cross-env": "^7.0.3",

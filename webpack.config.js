@@ -11,15 +11,17 @@ module.exports = {
   },
   context: src,
   entry: {
-    main: './PathUtil.js',
+    'PathUtil': './PathUtil.js',
   },
   output: {
-    filename: 'PathUtil.bundle.js',
-    sourceMapFilename: '[name].map',
+    filename: '[name].bundle.js',
+    sourceMapFilename: './map/[id].[chunkhash].js.map',
+    chunkFilename: './chunk/[id].[chunkhash].js',
     path: dist,
     publicPath:"",
     libraryExport: 'default',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    library: 'PathUtil'
   },
   module: {
   },
