@@ -1,6 +1,6 @@
 {
   "name": "@nojaja/pathutil",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Aims to standardize path representations across different operating systems, using Linux-style paths as the common format",
   "main": "./dist/PathUtil.bundle.js",
   "scripts": {
@@ -17,6 +17,9 @@
     "url": "https://github.com/nojaja/NodeNormalizePath/issues"
   },
   "homepage": "https://github.com/nojaja/NodeNormalizePath#readme",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "babel-jest": "^29.0.0",
     "cross-env": "^7.0.3",
