@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nojaja/NodeNormalizePath.git"
+    "url": "git+https://github.com/nojaja/NodePathUtil.git"
   },
   "author": "nojaja <free.riccia@gmail.com> (https://github.com/nojaja)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nojaja/NodeNormalizePath/issues"
+    "url": "https://github.com/nojaja/NodePathUtil/issues"
   },
-  "homepage": "https://github.com/nojaja/NodeNormalizePath#readme",
+  "homepage": "https://github.com/nojaja/NodePathUtil#readme",
   "files": [
     "dist"
   ],
