@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   displayName: 'integration',
   testEnvironment: 'node',
   testMatch: ['<rootDir>/tests/integration/**/*.test.js'],
