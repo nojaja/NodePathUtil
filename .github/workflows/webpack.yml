@@ -32,7 +32,7 @@ jobs:
       run: npm run build
 
     - name: Run integration tests
-      run: jest --config jest.integration.config.js
+      run: npx jest --config jest.integration.config.js
         
   publish-npm:
     needs: test
