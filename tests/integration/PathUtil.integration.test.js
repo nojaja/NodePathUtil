@@ -14,19 +14,20 @@ describe('PathUtil - Bundle Integration Tests', () => {
   describe('API Availability (防止回帰テスト: issue回避確認)', () => {
     // 前回解決した問題: libraryExport設定により normalizeSeparator/absolutePath が
     // トップレベルでエクスポートされていなかった問題
+    // 最新の修正: クラス形式から個別関数エクスポートへ変更し、import * as PathUtil 構文をサポート
     
     // Given: バンドル出力ファイルが存在する
-    // When: PathUtil クラスをロードする
-    // Then: 全てのスタティックメソッドがトップレベルでアクセス可能
-    it('should expose PathUtil class as main export', () => {
-      expect(typeof PathUtil).toBe('function');
-      expect(PathUtil.name).toBe('PathUtil');
+    // When: PathUtil モジュールをロードする
+    // Then: モジュールオブジェクトとして全ての関数がアクセス可能
+    it('should expose PathUtil as module with named exports', () => {
+      expect(typeof PathUtil).toBe('object');
+      expect(PathUtil).not.toBeNull();
     });
 
     // Given: バンドル出力ファイル
     // When: normalizeSeparator メソッドにアクセス
     // Then: 関数として正常にアクセス可能（修正前の問題が再発していない）
-    it('should expose normalizeSeparator as a static method (regression test)', () => {
+    it('should expose normalizeSeparator as a named export (regression test)', () => {
       expect(typeof PathUtil.normalizeSeparator).toBe('function');
       expect(PathUtil.normalizeSeparator).toBeDefined();
     });
@@ -34,7 +35,7 @@ describe('PathUtil - Bundle Integration Tests', () => {
     // Given: バンドル出力ファイル
     // When: absolutePath メソッドにアクセス
     // Then: 関数として正常にアクセス可能（修正前の問題が再発していない）
-    it('should expose absolutePath as a static method (regression test)', () => {
+    it('should expose absolutePath as a named export (regression test)', () => {
       expect(typeof PathUtil.absolutePath).toBe('function');
       expect(PathUtil.absolutePath).toBeDefined();
     });
@@ -42,7 +43,7 @@ describe('PathUtil - Bundle Integration Tests', () => {
     // Given: バンドル出力ファイル
     // When: isAbsolute メソッドにアクセス
     // Then: 関数として正常にアクセス可能
-    it('should expose isAbsolute as a static method', () => {
+    it('should expose isAbsolute as a named export', () => {
       expect(typeof PathUtil.isAbsolute).toBe('function');
       expect(PathUtil.isAbsolute).toBeDefined();
     });
@@ -50,7 +51,7 @@ describe('PathUtil - Bundle Integration Tests', () => {
     // Given: バンドル出力ファイル
     // When: relativePath メソッドにアクセス
     // Then: 関数として正常にアクセス可能
-    it('should expose relativePath as a static method', () => {
+    it('should expose relativePath as a named export', () => {
       expect(typeof PathUtil.relativePath).toBe('function');
       expect(PathUtil.relativePath).toBeDefined();
     });

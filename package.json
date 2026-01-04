@@ -1,6 +1,6 @@
 {
   "name": "@nojaja/pathutil",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Aims to standardize path representations across different operating systems, using Linux-style paths as the common format",
   "main": "./dist/PathUtil.bundle.js",
   "types": "./dist/PathUtil.d.ts",
@@ -25,12 +25,14 @@
     "dist"
   ],
   "devDependencies": {
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@types/node": "^22.0.0",
     "babel-jest": "^29.0.0",
     "cross-env": "^7.0.3",
     "jest": "^29.0.0",
     "typescript": "^5.3.3",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "@types/node": "^22.0.0"
+    "webpack-cli": "^4.10.0"
   }
 }
