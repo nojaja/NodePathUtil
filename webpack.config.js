@@ -19,7 +19,7 @@ module.exports = {
     chunkFilename: './chunk/[id].[chunkhash].js',
     path: dist,
     publicPath:"",
-    libraryExport: 'default',
+    libraryExport: 'PathUtil',
     libraryTarget: 'umd',
     library: 'PathUtil'
   },

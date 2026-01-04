@@ -1,11 +1,13 @@
 {
   "name": "@nojaja/pathutil",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Aims to standardize path representations across different operating systems, using Linux-style paths as the common format",
   "main": "./dist/PathUtil.bundle.js",
   "types": "./dist/PathUtil.d.ts",
   "scripts": {
     "test": "cross-env NODE_ENV=test webpack && jest",
+    "test:integration": "npm run build && jest --config jest.integration.config.js",
+    "test:all": "npm test && npm run test:integration",
     "build:types": "tsc --project tsconfig.json --emitDeclarationOnly",
     "build": "npm run build:types && webpack"
   },
